@@ -1,63 +1,68 @@
-🚀 StockSage AI: Autonomous Financial Insight Crew
-📘 Overview
-StockSage AI is an autonomous, multi-agent system built using the CrewAI framework. This project automates end-to-end stock analysis and investment recommendations by orchestrating multiple AI agents, each with their own roles and expertise.
+# 🚀 StockSage AI: Autonomous Financial Insight Crew
+
+## 📘 Overview
+
+**StockSage AI** is an autonomous, multi-agent system built using the **CrewAI framework**. This project automates end-to-end **stock analysis and investment recommendations** by orchestrating multiple AI agents, each with their own roles and expertise.
 
 It supports:
+- Large Language Models (GPT-4 / GPT-3.5)
+- Local models via Ollama (e.g., OpenHermes)
+- Tools for scraping, searching, calculations, and SEC filings
 
-Large Language Models (like GPT-4 or GPT-3.5)
+> Built by (@AnisElahi](https://www.linkedin.com/in/anis-elahi-sk))
 
-Local models (like OpenHermes via Ollama)
+---
 
-Tools for scraping, searching, calculations, and SEC filings
+## 🧠 How It Works (CrewAI Framework)
 
-By @joaomdmoura
+CrewAI allows AI agents to **collaborate like a real-world team**. In this project:
+- Each agent plays a different **financial analysis role**
+- They work together to generate a full stock analysis report + recommendation
 
-🧠 How It Works (CrewAI Framework)
-CrewAI allows AI agents to collaborate like a real team. In this project:
+---
 
-Each agent plays a different financial role.
+## 🚀 Getting Started
 
-They work together to analyze a stock and generate a detailed report with recommendations.
+### 1. Setup Environment
+Copy the `.env.example` file and configure it with your API keys:
+- [OpenAI](https://platform.openai.com/api-keys)
+- [Browserless](https://www.browserless.io/)
+- [Serper](https://serper.dev/)
+- [SEC-API](https://sec-api.io)
 
-🚀 Getting Started
-1. Setup Environment
-Copy the .env.example file and add your API keys for:
-
-OpenAI
-
-Browserless
-
-Serper
-
-SEC-API
-
-2. Install Dependencies
-bash
-Copy
-Edit
+### 2. Install Dependencies
+```bash
 poetry install --no-root
-3. Run the App
-bash
-Copy
-Edit
+````
+
+### 3. Run the Script
+
+```bash
 python main.py
-👉 When prompted, enter the company name you want to analyze.
+```
 
-⚠️ Note: GPT-4 is used by default. API usage may incur costs unless you switch to a free/local model.
+You will be prompted to enter a **company name** for analysis.
 
-🔍 File Structure
-File/Folder	Description
-main.py	Main execution script
-stock_analysis_agents.py	Defines AI agents
-stock_analysis_tasks.py	Defines tasks for the agents
-tools/	Custom tools for scraping, searching, calculating, etc.
+> ⚠️ **Note:** By default, GPT-4 is used which may consume paid API credits.
 
-🧠 Switching to GPT-3.5
-You can change an agent’s LLM like this:
+---
 
-python
-Copy
-Edit
+## 📁 Project Structure
+
+| Path                       | Description                                                            |
+| -------------------------- | ---------------------------------------------------------------------- |
+| `main.py`                  | Main script to run the CrewAI analysis                                 |
+| `stock_analysis_agents.py` | Defines the AI agents and their roles                                  |
+| `stock_analysis_tasks.py`  | Defines tasks and responsibilities for agents                          |
+| `tools/`                   | Contains utility tools like scraping, search, and financial data tools |
+
+---
+
+## 🧠 Switching to GPT-3.5
+
+To use GPT-3.5 instead of GPT-4, simply change the LLM in `main.py`:
+
+```python
 from langchain.chat_models import ChatOpenAI
 
 llm = ChatOpenAI(model='gpt-3.5')  # Use GPT-3.5
@@ -67,16 +72,23 @@ Agent(
   llm=llm,
   tools=[...]
 )
-🖥️ Using Local Models with Ollama
-🔧 Setup
-Install Ollama.
+```
 
-Tune with Modelfile settings if needed (add stop words like Observation, adjust top_p, temperature, etc.)
+---
 
-🧩 Integration Example:
-python
-Copy
-Edit
+## 🖥️ Using Local Models with Ollama
+
+### 🔧 Setup
+
+1. Install [Ollama](https://ollama.com)
+2. Customize with a [`Modelfile`](https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md) if needed
+
+   * You can add stop words like `Observation`
+   * Adjust `top_p`, `temperature`, etc.
+
+### 🧩 Integration Example
+
+```python
 from langchain.llms import Ollama
 ollama_openhermes = Ollama(model="openhermes")
 
@@ -85,18 +97,38 @@ Agent(
   llm=ollama_openhermes,
   tools=[...]
 )
-✅ Benefits of Local Models
-Data Privacy 🔐
+```
 
-Custom Fine-tuning 🎯
+### ✅ Local Model Benefits
 
-Potential Cost & Latency Savings ⚡
+* 🔐 **Privacy** — process data on your own infrastructure
+* ⚙️ **Customization** — tailor models for your use case
+* ⚡ **Speed** — potentially faster inference with low latency
 
-🤝 Contributing
-Contributions, feature requests, and improvements are welcome!
+---
 
-📬 Support
-For questions or collaboration, feel free to reach out to the original author: @joaomdmoura
+## 🤝 Contributing
 
-📝 License
-This project is licensed under the MIT License.
+Pull requests, feature ideas, and suggestions are always welcome!
+
+---
+
+## 📬 Support
+
+For questions or collaborations, contact the creator on [X](https://x.com/joaomdmoura).
+
+---
+
+## 📝 License
+
+Licensed under the **MIT License**.
+
+```
+
+
+Let me know if you want:
+- Badges (e.g., Python version, License, etc.)
+- A GitHub description
+- A cool project logo or banner  
+I'm ready, boss 😎
+```
