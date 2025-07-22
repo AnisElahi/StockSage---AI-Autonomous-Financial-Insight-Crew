@@ -126,9 +126,4 @@ Licensed under the **MIT License**.
 ```
 
 
-Let me know if you want:
-- Badges (e.g., Python version, License, etc.)
-- A GitHub description
-- A cool project logo or banner  
-I'm ready, boss 😎
-```
+
