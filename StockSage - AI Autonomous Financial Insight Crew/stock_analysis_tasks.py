@@ -12,6 +12,7 @@ class StockAnalysisTasks():
         sentiments, and analysts' opinions. Also include upcoming 
         events like earnings and others.
         
+        
         {self.__tip_section()}
   
         Make sure to use the most recent data as possible.
