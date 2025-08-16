@@ -9,6 +9,8 @@ load_dotenv()
 from langchain_google_genai import (ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings,HarmBlockThreshold,
     HarmCategory,)
 
+
+
 llm = ChatGoogleGenerativeAI(model="gemini-1.0-pro",
         google_api_key=os.environ.get("GEMINI_API_KEY"),
         temperature=0.1,
